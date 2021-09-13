@@ -1,5 +1,5 @@
-name: 'Execute Kotlin Script'
-description: 'Run the Kotlin Script with a compiler plugin'
+name: "Execute Kotlin Script"
+description: "Run the Kotlin Script with a compiler plugin"
 author: Suresh
 branding:
   color: purple
