@@ -1,0 +1,27 @@
+name: test
+
+on: push
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Run Kotlin Script on ${{ matrix.os }}
+        id: kotlin-script-exec
+        uses: ./
+        with:
+          script: script.main.kts
+          compiler-plugin: kotlinx-serialization
+
+      - name: Print compiler plugin path
+        run: echo ${{ steps.kotlin-script-exec.outputs.plugin-path }}

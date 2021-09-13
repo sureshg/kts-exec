@@ -10,7 +10,7 @@ inputs:
     description: 'Kotlin script to execute'
     required: true
     default: 'script.main.kts'
-  plugin-jar: # Compiler plugin jar
+  compiler-plugin:
     description: 'Kotlin compiler plugin to use (kotlinx-serialization|allopen|noarg|lombok|sam-with-receiver)'
     required: false
     default: 'kotlinx-serialization'
@@ -23,11 +23,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Get the Kotlin compiler plugin jar for ${{ inputs.plugin-jar }}
+    - name: Get the Kotlin compiler plugin jar for ${{ inputs.compiler-plugin }}
       id: kotlin-plugin
       run: |
         java -version
-        ${{ github.action_path }}/kotlin-plugin.sh ${{ inputs.plugin-jar }}
+        ${{ github.action_path }}/kotlin-plugin.sh ${{ inputs.compiler-plugin }}
       shell: bash
 
     - name: Run kotlin script ${{ inputs.script }}
