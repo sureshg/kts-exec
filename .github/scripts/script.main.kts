@@ -27,7 +27,8 @@ println("Hello $arg!")
 val serialized = Json.encodeToString(Lang("Kotlin", KotlinVersion.CURRENT.toString()))
 println(serialized)
 
-val deserialized = Json.decodeFromString<Lang>("""{"name" : "Java", "version": "18"}""")
+val javaVer: String = System.getProperty("java.version")
+val deserialized = Json.decodeFromString<Lang>("""{"name" : "Java", "version": "$javaVer"}""")
 println(deserialized)
 
 runBlocking {
