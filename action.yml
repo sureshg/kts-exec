@@ -1,0 +1,35 @@
+name: 'Execute Kotlin Script'
+description: 'Run the Kotlin Script with serialization compiler plugin'
+author: Suresh
+branding:
+  color: purple
+  icon: code
+
+inputs:
+  script: # Kotlin script file
+    description: 'Kotlin script to execute'
+    required: true
+    default: 'script.main.kts'
+  plugin-jar: # Compiler plugin jar
+    description: 'Kotlin compiler plugin jar to use'
+    required: false
+    default: 'kotlinx-serialization-compiler-plugin.jar'
+
+outputs:
+  plugin-path:
+    description: "Kotlin compiler plugin jar path"
+    value: ${{ steps.kotlin-plugin.outputs.plugin-path }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Get the Kotlin compiler plugin jar for ${{ inputs.plugin-jar }}
+      id: kotlin-plugin
+      run: |
+        java -version
+        ${{ github.action_path }}/kotlin-plugin.sh ${{ inputs.plugin-jar }}
+      shell: bash
+
+    - name: Run kotlin script ${{ inputs.script }}
+      run: kotlinc -script -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
+      shell: bash
