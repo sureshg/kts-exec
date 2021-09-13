@@ -11,6 +11,3 @@ out/
 build
 reports
 !gradle-wrapper.jar
-
-# Java
-hs_err_pid*

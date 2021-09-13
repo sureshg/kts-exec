@@ -1,5 +1,5 @@
 name: 'Execute Kotlin Script'
-description: 'Run the Kotlin Script with serialization compiler plugin'
+description: 'Run the Kotlin Script with a compiler plugin'
 author: Suresh
 branding:
   color: purple
@@ -11,9 +11,9 @@ inputs:
     required: true
     default: 'script.main.kts'
   plugin-jar: # Compiler plugin jar
-    description: 'Kotlin compiler plugin jar to use'
+    description: 'Kotlin compiler plugin to use (kotlinx-serialization|allopen|noarg|lombok|sam-with-receiver)'
     required: false
-    default: 'kotlinx-serialization-compiler-plugin.jar'
+    default: 'kotlinx-serialization'
 
 outputs:
   plugin-path:

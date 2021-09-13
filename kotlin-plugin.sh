@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # A script to search for the given Kotlin compiler
 # plugin jar and output it's full path.
-
 set -euo pipefail
 
-plugin_file=${1:-kotlinx-serialization-compiler-plugin.jar}
+plugin=${1:-kotlinx-serialization}
+plugin_file="${plugin}-compiler-plugin.jar"
 echo "Searching kotlin compiler plugin: $plugin_file"
 
 case "$OSTYPE" in
@@ -19,8 +19,8 @@ msys*)
   ;;
 esac
 
-if [ -n "${plugin_path}" ]; then
-  echo "::set-output name=plugin-path::$plugin_path"
-else
+if [ -z "${plugin_path}" ]; then
   echo "::set-output name=plugin-path::$plugin_file"
+else
+  echo "::set-output name=plugin-path::$plugin_path"
 fi
