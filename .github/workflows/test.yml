@@ -24,4 +24,6 @@ jobs:
           compiler-plugin: kotlinx-serialization
 
       - name: Print compiler plugin path
-        run: echo ${{ steps.kotlin-script-exec.outputs.plugin-path }}
+        run: |
+          java -version
+          echo ${{ steps.kotlin-script-exec.outputs.plugin-path }}

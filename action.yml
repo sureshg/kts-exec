@@ -25,9 +25,7 @@ runs:
   steps:
     - name: Get the Kotlin compiler plugin jar for ${{ inputs.compiler-plugin }}
       id: kotlin-plugin
-      run: |
-        java -version
-        ${{ github.action_path }}/kotlin-plugin.sh ${{ inputs.compiler-plugin }}
+      run: ${{ github.action_path }}kotlin-plugin.sh ${{ inputs.compiler-plugin }}
       shell: bash
 
     - name: Run kotlin script ${{ inputs.script }}
