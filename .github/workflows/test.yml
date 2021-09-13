@@ -20,7 +20,7 @@ jobs:
         id: kotlin-script-exec
         uses: ./
         with:
-          script: script.main.kts
+          script: ".github/scripts/script.main.kts"
           compiler-plugin: kotlinx-serialization
 
       - name: Print compiler plugin path
