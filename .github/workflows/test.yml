@@ -1,13 +1,18 @@
-name: test
+name: Kotlin Script Test
 
-on: push
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 defaults:
   run:
     shell: bash
 
+
 jobs:
-  test:
+  kts-test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
