@@ -2,10 +2,10 @@
 
 [![Kotlin Script Test](https://github.com/sureshg/kts-exec/actions/workflows/test.yml/badge.svg)](https://github.com/sureshg/kts-exec/actions/workflows/test.yml)
 
-`Kotlin` can also be used as a scripting language, which is more safer, concise, and fun to write
-than `bash` or `python`. Github has recently enabled `Kotlin` on `Github Action` runners, which
-enables us to use [Kotlin Script][0] on Github Action out of the box. But using compiler plugins (
-eg: [kotlinx-serialization][1]) is not straightforward with Kotlin script and requires a bit of
+[Kotlin][0] can also be used as a scripting language, which is more safer, concise, and fun to write
+than `bash` or `python`. Github has recently [enabled][3] `Kotlin` on `Github Action` runners, which
+enables us to use [Kotlin Script][1] on Github Action out of the box. But using compiler plugins (
+eg: [kotlinx-serialization][2]) is not straightforward with Kotlin script and requires a bit of
 fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (on `mac`/`linux`
 /`windows`) with a given kotlin compiler plugin.
 
@@ -66,6 +66,10 @@ jobs:
           script: "script.main.kts"
 ```
 
-[0]: https://kotlinlang.org/docs/command-line.html#run-scripts
+[0]: https://kotlinlang.org/
 
-[1]: https://kotlinlang.org/docs/serialization.html
+[1]: https://kotlinlang.org/docs/command-line.html#run-scripts
+
+[2]: https://kotlinlang.org/docs/serialization.html
+
+[3]: https://github.com/actions/virtual-environments/issues/3687
