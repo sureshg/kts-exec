@@ -2,8 +2,8 @@ name: "Execute Kotlin Script"
 description: "Run the Kotlin Script with a compiler plugin"
 author: Suresh
 branding:
-  color: purple
-  icon: code
+  color: gray-dark
+  icon: package
 
 inputs:
   script: # Kotlin script file
