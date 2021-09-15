@@ -28,6 +28,15 @@ runs:
       run: $GITHUB_ACTION_PATH/kotlin-plugin.sh ${{ inputs.compiler-plugin }}
       shell: bash
 
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.ivy2/cache
+        key: ${{ runner.os }}-ivy-${{ hashFiles(${{ inputs.script }}) }}
+        restore-keys: |
+          ${{ runner.os }}-ivy-
+
     - name: Run kotlin script ${{ inputs.script }}
       run: kotlinc -script -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
       shell: bash
