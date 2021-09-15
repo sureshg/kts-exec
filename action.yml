@@ -34,7 +34,6 @@ runs:
 
     - name: Cache dependencies
       uses: actions/cache@v2
-      if: success() && ${{ inputs.cache }} == 'true'
       with:
         path: |
           ~/.ivy2/cache
