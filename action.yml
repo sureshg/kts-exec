@@ -14,6 +14,10 @@ inputs:
     description: 'Kotlin compiler plugin to use (kotlinx-serialization|allopen|noarg|lombok|sam-with-receiver)'
     required: false
     default: 'kotlinx-serialization'
+  cache:
+    description: 'Enable script dependencies caching'
+    required: false
+    default: 'false'
 
 outputs:
   plugin-path:
@@ -30,10 +34,11 @@ runs:
 
     - name: Cache dependencies
       uses: actions/cache@v2
+      if: success() && ${{ inputs.cache }} == 'true'
       with:
         path: |
           ~/.ivy2/cache
-        key: ${{ runner.os }}-ivy-${{ hashFiles(${{ inputs.script }}) }}
+        key: ${{ runner.os }}-ivy-${{ hashFiles('**/*.kts') }}
         restore-keys: |
           ${{ runner.os }}-ivy-
 

@@ -10,7 +10,6 @@ defaults:
   run:
     shell: bash
 
-
 jobs:
   kts-test:
     runs-on: ${{ matrix.os }}

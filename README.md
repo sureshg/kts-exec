@@ -7,7 +7,7 @@ than `bash` or `python`. Github has recently [enabled][3] `Kotlin` on `Github Ac
 enables us to use [Kotlin Script][1] on Github Action out of the box. But using compiler plugins (
 eg: [kotlinx-serialization][2]) is not straightforward with Kotlin script and requires a bit of
 fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (on `mac`/`linux`
-/`windows`) with a given kotlin compiler plugin.
+/`windows`) with a given kotlin compiler plugin and `dependency caching`.
 
 ## Inputs
 
