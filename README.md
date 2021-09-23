@@ -1,6 +1,6 @@
 # Kotlin Script Github Action
 
-[![Kotlin Script Test](https://github.com/sureshg/kts-exec/actions/workflows/test.yml/badge.svg)](https://github.com/sureshg/kts-exec/actions/workflows/test.yml)
+[![Version][gh_action_img]][gh_action] [![Kotlin Script Test][workflow_img]][workflow_url]
 
 [Kotlin][0] can also be used as a scripting language, which is more safer, concise, and fun to write
 than `bash` or `python`. Github has recently [enabled][3] `Kotlin` on `Github Action` runners, which
@@ -84,3 +84,10 @@ jobs:
 [2]: https://kotlinlang.org/docs/serialization.html
 
 [3]: https://github.com/actions/virtual-environments/issues/3687
+
+[gh_action_img]: https://img.shields.io/github/v/tag/sureshg/kts-exec?color=24292e&label=Github%20Action&logo=Github&logoColor=ffffff&style=for-the-badge
+[gh_action]: https://github.com/marketplace/actions/execute-kotlin-script
+
+[workflow_img]: https://img.shields.io/github/workflow/status/sureshg/kts-exec/Kotlin%20Script%20Test?color=green&label=Kotlin%20Script%20Test&logo=github%20actions&logoColor=green&style=for-the-badge
+[workflow_url]: https://github.com/sureshg/kts-exec/actions/workflows/test.yml
+
