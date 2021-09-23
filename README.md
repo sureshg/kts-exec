@@ -30,8 +30,11 @@ fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (
 
 ### `plugin-path`
 
+Local path to the kotlin `compiler-plugin`. You may also access the path via `${{ env.PLUGIN_PATH }}`.
+
 ### `kotlin-root`
 
+The kotlin installation path. You may also access the path via `${{ env.KOTLIN_ROOT }}`.
 
 ## Usage
 
