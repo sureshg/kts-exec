@@ -11,7 +11,7 @@ inputs:
     required: true
     default: 'script.main.kts'
   compiler-plugin:
-    description: 'Kotlin compiler plugin to use (kotlinx-serialization|allopen|noarg|lombok|sam-with-receiver)'
+    description: 'Kotlin compiler plugin to use (kotlinx-serialization|allopen|noarg|lombok|sam-with-receiver|kotlin-imports-dumper)'
     required: false
     default: 'kotlinx-serialization'
   cache:
@@ -23,6 +23,9 @@ outputs:
   plugin-path:
     description: "Kotlin compiler plugin jar path"
     value: ${{ steps.kotlin-plugin.outputs.plugin-path }}
+  kotlin-root:
+    description: "Kotlin installation directory"
+    value: ${{ steps.kotlin-plugin.outputs.kotlin-root }}
 
 runs:
   using: "composite"
@@ -42,5 +45,7 @@ runs:
           ${{ runner.os }}-ivy-
 
     - name: Run kotlin script ${{ inputs.script }}
-      run: kotlinc -script -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
+      run: |
+        # kotlinc -script -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
+        kotlinc -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
       shell: bash

@@ -27,7 +27,8 @@ jobs:
           script: ".github/scripts/script.main.kts"
           compiler-plugin: kotlinx-serialization
 
-      - name: Print compiler plugin path
+      - name: Print Kotlin install and compiler plugin path
         run: |
           java -version
           echo ${{ steps.kotlin-script-exec.outputs.plugin-path }}
+          echo ${{ steps.kotlin-script-exec.outputs.kotlin-root }}

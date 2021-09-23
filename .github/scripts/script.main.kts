@@ -1,4 +1,4 @@
-#!/usr/bin/env -S kotlin -Xplugin=/usr/local/Cellar/kotlin/1.5.30/libexec/lib/kotlinx-serialization-compiler-plugin.jar
+#!/usr/bin/env -S kotlin -Xplugin=/usr/local/Cellar/kotlin/1.5.31/libexec/lib/kotlinx-serialization-compiler-plugin.jar
 
 // @file:Repository("https://maven.google.com")
 @file:DependsOn("io.ktor:ktor-client-core:1.6.3")

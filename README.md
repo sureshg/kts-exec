@@ -24,6 +24,7 @@ fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (
 - `noarg`
 - `lombok`
 - `sam-with-receiver`
+- `kotlin-imports-dumper`
 
 ## Usage
 
@@ -61,7 +62,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Kotlin Script
-        uses: sureshg/kts-exec@v2.1
+        uses: sureshg/kts-exec@v2.2
         with:
           script: "script.main.kts"
 ```
