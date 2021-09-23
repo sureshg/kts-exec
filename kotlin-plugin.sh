@@ -9,23 +9,37 @@ plugin_file="${plugin}-compiler-plugin.jar"
 case "$OSTYPE" in
 darwin*)
   plugin_path=$(find /usr/local/Cellar/kotlin -type f -iname "${plugin_file}")
+  if [ -n "${plugin_path}" ]; then
+    kotlin_root=$(
+      builtin cd "$(dirname "$plugin_path")/../.."
+      pwd
+    )
+  fi
+
   ;;
 msys*)
-  plugin_path=$(find /c/tools/kotlinc -type f -iname "${plugin_file}")
+  kotlin_root="/c/tools/kotlinc"
+  plugin_path=$(find $kotlin_root -type f -iname "${plugin_file}")
   ;;
 *)
-  plugin_path=$(find /usr/share/kotlinc -type f -iname "${plugin_file}")
+  kotlin_root="/usr/share/kotlinc"
+  plugin_path=$(find $kotlin_root -type f -iname "${plugin_file}")
   ;;
 esac
 
+# Set plugin path
 if [ -z "${plugin_path}" ]; then
   echo "::set-output name=plugin-path::$plugin_file"
-  echo "::set-output name=kotlin-root::UNKNOWN"
 else
   echo "::set-output name=plugin-path::$plugin_path"
-  kotlin_root=$(
-    builtin cd "$(dirname "$plugin_path")/../.."
-    pwd
-  )
+  echo "plugin-path=$plugin_path" >>"$GITHUB_ENV"
+fi
+
+# Set kotlin install path
+if [ -z "${kotlin_root}" ]; then
+  echo "::set-output name=kotlin-root::UNKNOWN"
+else
   echo "::set-output name=kotlin-root::$kotlin_root"
+  echo "kotlin-root=$kotlin_root" >>"$GITHUB_ENV"
+  # echo "{path}" >> $GITHUB_PATH
 fi

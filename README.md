@@ -26,6 +26,13 @@ fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (
 - `sam-with-receiver`
 - `kotlin-imports-dumper`
 
+## Outputs
+
+### `plugin-path`
+
+### `kotlin-root`
+
+
 ## Usage
 
 Say, you want to execute the kotlin script with a `Serializable` data class for JSON processing

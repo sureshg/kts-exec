@@ -47,5 +47,5 @@ runs:
     - name: Run kotlin script ${{ inputs.script }}
       run: |
         # kotlinc -script -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
-        kotlinc -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
+        kotlin -Xplugin=${{ steps.kotlin-plugin.outputs.plugin-path }} ${{ inputs.script }}
       shell: bash

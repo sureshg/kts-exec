@@ -30,5 +30,10 @@ jobs:
       - name: Print Kotlin install and compiler plugin path
         run: |
           java -version
-          echo ${{ steps.kotlin-script-exec.outputs.plugin-path }}
-          echo ${{ steps.kotlin-script-exec.outputs.kotlin-root }}
+          echo "Plugin Path: ${{ steps.kotlin-script-exec.outputs.plugin-path }}"
+          echo "Kotlin Root: ${{ steps.kotlin-script-exec.outputs.kotlin-root }}"
+
+      - name: List all the Kotlin binaries
+        run: |
+          cd "${{ steps.kotlin-script-exec.outputs.kotlin-root }}/bin"
+          ls -ltrh
