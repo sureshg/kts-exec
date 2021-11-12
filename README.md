@@ -26,6 +26,10 @@ fiddling. `kts-exec` is a composite Github Action to execute the Kotlin Script (
 - `sam-with-receiver`
 - `kotlin-imports-dumper`
 
+### `cache`
+
+**Optional** Enable kotlin script dependencies caching. It is enabled (`true`) by default.
+
 ## Outputs
 
 ### `plugin-path`
@@ -44,7 +48,7 @@ Say, you want to execute the kotlin script with a `Serializable` data class for 
 <summary>script.main.kts</summary>
 
 ```kotlin
-@file:DependsOn("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+@file:DependsOn("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
@@ -72,7 +76,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Kotlin Script
-        uses: sureshg/kts-exec@v2.2
+        uses: sureshg/kts-exec@v2.3
         with:
           script: "script.main.kts"
 ```
@@ -90,4 +94,6 @@ jobs:
 
 [workflow_img]: https://img.shields.io/github/workflow/status/sureshg/kts-exec/Kotlin%20Script%20Test?color=green&label=Kotlin%20Script%20Test&logo=github%20actions&logoColor=green&style=for-the-badge
 [workflow_url]: https://github.com/sureshg/kts-exec/actions/workflows/test.yml
+
+[composite_actions_syntax]: https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-actions
 

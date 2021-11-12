@@ -26,7 +26,7 @@ jobs:
         with:
           script: ".github/scripts/script.main.kts"
           compiler-plugin: kotlinx-serialization
-          cache: false
+          # cache: true
 
       - name: Print Kotlin install and compiler plugin path
         run: |
