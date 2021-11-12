@@ -11,7 +11,7 @@ darwin*)
   plugin_path=$(find /usr/local/Cellar/kotlin -type f -iname "${plugin_file}")
   if [ -n "${plugin_path}" ]; then
     kotlin_root=$(
-      builtin cd "$(dirname "$plugin_path")/../.."
+      builtin cd "$(dirname "${plugin_path}")/../.."
       pwd
     )
   fi

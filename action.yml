@@ -6,7 +6,7 @@ branding:
   icon: package
 
 inputs:
-  script: # Kotlin script file
+  script:
     description: 'Kotlin script to execute'
     required: true
     default: 'script.main.kts'
@@ -17,7 +17,7 @@ inputs:
   cache:
     description: 'Enable script dependencies caching'
     required: false
-    default: 'false'
+    default: 'true'
 
 outputs:
   plugin-path:
@@ -36,6 +36,7 @@ runs:
       shell: bash
 
     - name: Cache dependencies
+      if: inputs.cache == 'true'
       uses: actions/cache@v2
       with:
         path: |
