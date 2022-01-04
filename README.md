@@ -48,7 +48,7 @@ Say, you want to execute the kotlin script with a `Serializable` data class for 
 <summary>script.main.kts</summary>
 
 ```kotlin
-@file:DependsOn("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
+@file:DependsOn("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
