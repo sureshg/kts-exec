@@ -5,8 +5,8 @@
 @file:DependsOn("io.ktor:ktor-client-cio:2.0.0-beta-1")
 @file:DependsOn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
 @file:DependsOn("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-@file:DependsOn("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
-@file:DependsOn("org.slf4j:slf4j-simple:2.0.0-alpha5")
+@file:DependsOn("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
+@file:DependsOn("org.slf4j:slf4j-simple:2.0.0-alpha7")
 // @file:Import("common.main.kts")
 
 @file:CompilerOptions("-Xopt-in=kotlin.RequiresOptIn", "-jvm-target", "1.8")

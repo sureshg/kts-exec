@@ -76,7 +76,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Kotlin Script
-        uses: sureshg/kts-exec@v2.3
+        uses: sureshg/kts-exec@v2.4
         with:
           script: "script.main.kts"
 ```
