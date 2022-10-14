@@ -29,17 +29,17 @@ esac
 
 # Set plugin path
 if [ -z "${plugin_path}" ]; then
-  echo "::set-output name=plugin-path::$plugin_file"
+  echo "plugin-path=$plugin_file" >>"$GITHUB_OUTPUT"
 else
-  echo "::set-output name=plugin-path::$plugin_path"
+  echo "plugin-path=$plugin_path" >>"$GITHUB_OUTPUT"
   echo "PLUGIN_PATH=$plugin_path" >>"$GITHUB_ENV"
 fi
 
 # Set kotlin install path
 if [ -z "${kotlin_root}" ]; then
-  echo "::set-output name=kotlin-root::UNKNOWN"
+  echo "kotlin-root=UNKNOWN" >>"$GITHUB_OUTPUT"
 else
-  echo "::set-output name=kotlin-root::$kotlin_root"
+  echo "kotlin-root=$kotlin_root" >>"$GITHUB_OUTPUT"
   echo "KOTLIN_ROOT=$kotlin_root" >>"$GITHUB_ENV"
-  # echo "{path}" >> $GITHUB_PATH
+  # echo "$kotlin_root" >> $GITHUB_PATH
 fi
