@@ -92,7 +92,7 @@ jobs:
 [gh_action_img]: https://img.shields.io/github/v/tag/sureshg/kts-exec?color=24292e&label=Github%20Action&logo=Github&logoColor=ffffff&style=for-the-badge
 [gh_action]: https://github.com/marketplace/actions/execute-kotlin-script
 
-[workflow_img]: https://img.shields.io/github/workflow/status/sureshg/kts-exec/Kotlin%20Script%20Test?color=green&label=Kotlin%20Script%20Test&logo=github%20actions&logoColor=green&style=for-the-badge
+[workflow_img]: https://img.shields.io/github/actions/workflow/status/sureshg/kts-exec/test.yml?branch=main&color=green&label=Kotlin%20Script%20Test&logo=github%20actions&logoColor=green&style=for-the-badge
 [workflow_url]: https://github.com/sureshg/kts-exec/actions/workflows/test.yml
 
 [composite_actions_syntax]: https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-actions
