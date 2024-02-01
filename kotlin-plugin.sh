@@ -8,7 +8,7 @@ plugin_file="${plugin}-compiler-plugin.jar"
 
 case "$OSTYPE" in
 darwin*)
-  plugin_path=$(find /usr/local/Cellar/kotlin -type f -iname "${plugin_file}")
+  plugin_path=$(find "$(dirname "$(readlink -f "$(which kotlin)")")/.." -type f -iname "${plugin_file}")
   if [ -n "${plugin_path}" ]; then
     kotlin_root=$(
       builtin cd "$(dirname "${plugin_path}")/../.."
