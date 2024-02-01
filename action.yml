@@ -32,7 +32,9 @@ runs:
   steps:
     - name: Get the Kotlin compiler plugin jar for ${{ inputs.compiler-plugin }}
       id: kotlin-plugin
-      run: $GITHUB_ACTION_PATH/kotlin-plugin.sh ${{ inputs.compiler-plugin }}
+      run: |
+        which kotlin
+        $GITHUB_ACTION_PATH/kotlin-plugin.sh ${{ inputs.compiler-plugin }}
       shell: bash
 
     - name: Cache dependencies
