@@ -70,7 +70,7 @@ Add the `kt-exec` to your workflow and run your kotlin script.
 ```yml
 jobs:
   build:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
